@@ -1,0 +1,14 @@
+<div class="container">
+    <div ><h2>{{book.title}}</h2></div>
+   <form (ngSubmit)="Comment()">
+          <textarea class="form-control"name="newComment" rows="5"[(ngModel)]="newComment"></textarea><br><br>
+                  <button class="btn btn-primary btn-lg" type="submit">submit</button>
+                 </form>
+                 <h3>comments</h3>
+                 <div *ngIf="book.comments_string.length>0">
+                     <div *ngFor="let comment of book.comments_string">
+                         {{comment}}
+                     </div>
+                 </div>
+</div>
+
